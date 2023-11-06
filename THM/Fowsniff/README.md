@@ -2,7 +2,7 @@
 Easy Tryhackme Free Machine
 
 ## Recon 
-#### First: Run a nmap scan to get the open-ports and services with ```nmap -A -sV -F -T4 10.10.114.172 ```
+### First: Run a nmap scan to get the open-ports and services with ```nmap -A -sV -F -T4 10.10.114.172 ```
 
 ```
 PORT    STATE SERVICE VERSION
@@ -24,8 +24,25 @@ No exact OS matches for host (If you know what OS is running on it, see https://
 
 ```
 
-#### So we need to take a look in each service let's start with HTTP!
-#### When we visited the website of the machine we noted a critical note: there a data breach of the employees' credentials at the twitter account 
+
+
+### So we need to take a look in each service, let's start with HTTP!
+### When we visited the website of the machine we noted a critical note: there a data breach of the employees' credentials at the twitter account 
 
 ![](assets/Twitter%20find1.png)
+
+
+### Then we gone to this twitter account to find this creds and we got this twitt 
+![](assets/twitt.png)
+
+
+### which is redirected us into the breached creds which password's hash for each user..
+![](assets/hashes.png)
+
+
+### So we need to crack this hashes, you can this website to crack simple hashes ```https://crackstation.net/``` or use hashcat.
+
+![](assets/crackedhashes.png)
+
+
 
