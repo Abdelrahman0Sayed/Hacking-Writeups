@@ -25,24 +25,64 @@ No exact OS matches for host (If you know what OS is running on it, see https://
 ```
 
 
-
-### So we need to take a look in each service, let's start with HTTP!
-### When we visited the website of the machine we noted a critical note: there a data breach of the employees' credentials at the twitter account 
+### So we need to take a look at each service, let's start with HTTP!
+### When we visited the website of the machine we noted a critical note: there was a data breach of the employees' credentials on the twitter account 
 
 ![](assets/Twitter%20find1.png)
 
 
-### Then we gone to this twitter account to find this creds and we got this twitt 
+### Then we went to this Twitter account to find these creds and we got this tweet. 
 ![](assets/twitt.png)
 
 
-### which is redirected us into the breached creds which password's hash for each user..
+### which redirected us to the breached creds which passwords hash for each user.
 ![](assets/hashes.png)
 
 
 ### So we need to crack this hashes, you can this website to crack simple hashes ```https://crackstation.net/``` or use hashcat.
 
 ![](assets/crackedhashes.png)
+
+
+
+
+### Now, it's your turn pop3!
+## Challenge 1: you can use metasploit module to bruteforce pop3 login to know which user use pop3 service.
+
+### Now we need to check emails of this user.
+
+![](assets/pop3.png)
+
+## Challenge 2: use retr command to return the message and the user and pass to make ssh login.
+![](assets/meta-scan.png)
+
+
+## Gaining Access
+### We've got username and password to login.
+
+![](assets/ssh-shell.png)
+
+
+### We noted that the username is a member in a group called <users> so we need to know what this group can do with root perm, just write ``` find / f -group 'users' 2>/dev/null``` 
+
+![](assets/group-permissions.png)
+
+### There's a script called cube.sh we need to take a look 
+### IDEA: As long as we can edit this file, we can add a python reverse shell but make sure the system has a python with: ``` which python``` or ``` which python3```
+
+
+![](assets/Gain-shell.png)   #This photo from ```https://www.hackingarticles.in/fowsniff-1-vulnhub-walkthrough/``` because i've forgot to take a screenshot to this section :D
+
+
+### Did you notice something?
+### This pattern is the same pattern that appeared when we logged in with ssh, so I think this script running when you log in. 
+
+### So I setup a Netcat listener and logged-in again 
+
+
+### We've got the root privileges.
+
+
 
 
 
