@@ -71,13 +71,15 @@ No exact OS matches for host (If you know what OS is running on it, see https://
 ### IDEA: As long as we can edit this file, we can add a python reverse shell but make sure the system has a python with: ``` which python``` or ``` which python3```
 
 
-![](assets/Gain-shell.png)   #This photo from ```https://www.hackingarticles.in/fowsniff-1-vulnhub-walkthrough/``` because i've forgot to take a screenshot to this section :D
+![](assets/Gain-shell.png)  
+#This photo from ```https://www.hackingarticles.in/fowsniff-1-vulnhub-walkthrough/``` because i've forgot to take a screenshot to this section :D
 
 
 ### Did you notice something?
 ### This pattern is the same pattern that appeared when we logged in with ssh, so I think this script running when you log in. 
 
 ### So I setup a Netcat listener and logged-in again 
+![](assets/Pwned.png)  
 
 
 ### We've got the root privileges.
