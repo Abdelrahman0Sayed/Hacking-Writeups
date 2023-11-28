@@ -51,10 +51,10 @@ No exact OS matches for host (If you know what OS is running on it, see https://
 
 ### Now we need to check emails of this user.
 
-![](assets/pop3.png)
+![](assets/meta-scan.png)
 
 ## Challenge 2: use retr command to return the message and the user and pass to make ssh login.
-![](assets/meta-scan.png)
+![](assets/pop3.png)
 
 
 ## Gaining Access
